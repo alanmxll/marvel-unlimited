@@ -2,7 +2,7 @@ import { HASH, PUBLIC_APIKEY, TIMESTAMP } from "@env";
 
 export default class MarvelRepository {
   static async fetchCharacters() {
-    const uri = `https://gateway.marvel.com:443/v1/public/characters?ts=${TIMESTAMP}&apikey=${PUBLIC_APIKEY}&hash=${HASH}&limit50`;
+    const uri = `https://gateway.marvel.com:443/v1/public/characters?ts=${TIMESTAMP}&apikey=${PUBLIC_APIKEY}&hash=${HASH}&limit=50`;
 
     return await fetch(uri)
       .then((response) => response.json())

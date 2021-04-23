@@ -5,17 +5,18 @@ export const Container = styled.View`
   border: 1px solid white;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #fff;
-  margin-bottom: 8px;
+  margin: 5px;
+  width: 125px;
 `;
 
 export const CardLabel = styled.Text`
   align-self: center;
-  font-size: 20px;
   color: #fff;
+  height: 25px;
 `;
 
 export const HeroImage = styled.Image`
-  height: 175px;
+  height: 100px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 `;

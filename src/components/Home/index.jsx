@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView } from "react-native";
 import MarvelController from "../../controllers/MarvelController";
 import List from "../List";
 import Title from "../Title";
@@ -22,7 +21,7 @@ export default function Home() {
   return (
     <Container>
       <Title />
-      {heroes.length > 0 && <List data={heroes} />}
+      {heroes && <List data={heroes} />}
     </Container>
   );
 }

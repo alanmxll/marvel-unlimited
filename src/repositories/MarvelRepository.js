@@ -18,4 +18,13 @@ export default class MarvelRepository {
       .then((jsonParsed) => jsonParsed.data)
       .catch((error) => console.log(error));
   }
+
+  static async fetchComicsByCharacterId({ id }) {
+    const uri = `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=${TIMESTAMP}&apikey=${PUBLIC_APIKEY}&hash=${HASH}&limit=100`;
+
+    return await fetch(uri)
+      .then((response) => response.json())
+      .then((jsonParsed) => jsonParsed.data)
+      .catch((error) => console.log(error));
+  }
 }

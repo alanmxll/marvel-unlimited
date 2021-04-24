@@ -8,4 +8,8 @@ export default class MarvelController {
   async fetchComics() {
     return await MarvelRepository.fetchComics();
   }
+
+  async fetchComicsByCharacterId({id}) {
+    return await MarvelRepository.fetchComicsByCharacterId({id})
+  }
 }

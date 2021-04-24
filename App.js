@@ -5,6 +5,8 @@ import { StatusBar } from "react-native";
 import Comics from "./src/components/Comics";
 import Home from "./src/components/Home";
 import Title from "./src/components/Title";
+import Comics from "./src/screens/Comics";
+import Home from "./src/screens/Home";
 
 const Stack = createStackNavigator();
 

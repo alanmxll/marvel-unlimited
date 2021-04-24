@@ -2,8 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { StatusBar } from "react-native";
-import Comics from "./src/components/Comics";
-import Home from "./src/components/Home";
 import Title from "./src/components/Title";
 import Comics from "./src/screens/Comics";
 import Home from "./src/screens/Home";
@@ -22,6 +20,9 @@ export default function App() {
             backgroundColor: "#333",
             elevation: 0,
           },
+          headerTitleStyle: { color: "red" },
+          headerTintColor: "red",
+          headerTitleAlign: "center",
         }}
       >
         <Stack.Screen name="Home" component={Home} />

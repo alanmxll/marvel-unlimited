@@ -5,7 +5,6 @@ export const Container = styled.View`
   border: 1px solid white;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #fff;
-  margin: 5px;
   width: 125px;
 `;
 

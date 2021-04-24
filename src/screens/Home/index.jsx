@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
+import List from "../../components/List";
+import LoadData from "../../components/LoadData";
 import MarvelController from "../../controllers/MarvelController";
-import List from "../List";
-import Title from "../Title";
 import { Container } from "./styles";
 
 const marvelController = new MarvelController();
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [heroes, setHeroes] = useState([]);
 
   useEffect(() => {
@@ -20,8 +20,11 @@ export default function Home() {
 
   return (
     <Container>
-      <Title />
-      {heroes && <List data={heroes} />}
+      {heroes.length > 0 ? (
+        <List data={heroes} navigation={navigation} />
+      ) : (
+        <LoadData />
+      )}
     </Container>
   );
 }

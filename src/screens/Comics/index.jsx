@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView } from "react-native";
+import Carousel from "react-native-snap-carousel";
 import LoadData from "../../components/LoadData";
 import MarvelController from "../../controllers/MarvelController";
-import { ComicImage, ComicLabel, Container } from "./styles";
+import {
+  ComicCard,
+  ComicImage,
+  ComicLabel,
+  Container,
+  DetailsButton,
+  LabelCard,
+  TextButton,
+} from "./styles";
 
 const marvelController = new MarvelController();
 
@@ -22,18 +30,28 @@ export default function Comics(data) {
   }, [comicsByCharacter]);
 
   return comicsByCharacter.length > 0 ? (
-    <ScrollView style={{ backgroundColor: "#333" }}>
-      {comicsByCharacter.map((comic) => {
-        const sourceImage = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
+    <Container>
+      <Carousel
+        data={comicsByCharacter}
+        renderItem={({ item }) => {
+          const sourceImage = `${item.thumbnail.path}.${item.thumbnail.extension}`;
 
-        return (
-          <Container key={comic.id}>
-            <ComicLabel>{comic.title}</ComicLabel>
-            <ComicImage source={{ uri: sourceImage }} />
-          </Container>
-        );
-      })}
-    </ScrollView>
+          return (
+            <ComicCard key={item.id}>
+              <ComicImage source={{ uri: sourceImage }} />
+              <LabelCard>
+                <ComicLabel>{item.title}</ComicLabel>
+                <DetailsButton title="See comics details">
+                  <TextButton>See details</TextButton>
+                </DetailsButton>
+              </LabelCard>
+            </ComicCard>
+          );
+        }}
+        sliderWidth={425}
+        itemWidth={325}
+      />
+    </Container>
   ) : (
     <LoadData />
   );

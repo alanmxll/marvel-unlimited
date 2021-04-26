@@ -1,19 +1,20 @@
 import React from "react";
-import { TouchableHighlight } from "react-native";
-
-import { FlatGrid } from "react-native-super-grid";
+import { FlatList, TouchableHighlight } from "react-native";
 import Card from "../Card";
 
-export default function List({ data, navigation }) {
+export default function List({ data, navigation, onReached }) {
   return (
-    <FlatGrid
+    <FlatList
       data={data}
-      spacing={10}
-      style={{ marginTop: 10, flex: 1 }}
+      columnWrapperStyle={{ margin: 5, justifyContent: "space-between" }}
+      numColumns={3}
+      keyExtractor={({ id }) => id}
+      onEndReachedThreshold={0.1}
+      onEndReached={onReached}
       renderItem={({ item }) => {
         return (
           <TouchableHighlight
-            activeOpacity={0.1}
+            activeOpacity={1}
             underlayColor={"#444"}
             onPress={() => {
               navigation.navigate("Comics", item.id);

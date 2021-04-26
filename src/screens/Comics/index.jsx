@@ -41,7 +41,13 @@ export default function Comics(data) {
               <ComicImage source={{ uri: sourceImage }} />
               <LabelCard>
                 <ComicLabel>{item.title}</ComicLabel>
-                <DetailsButton title="See comics details">
+                <DetailsButton
+                  activeOpacity={0.1}
+                  underlayColor={"#fff"}
+                  onPress={() => {
+                    navigation.navigate("Details", item);
+                  }}
+                >
                   <TextButton>See details</TextButton>
                 </DetailsButton>
               </LabelCard>

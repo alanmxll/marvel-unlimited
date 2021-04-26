@@ -7,7 +7,7 @@ export const Container = styled.ScrollView`
 export const ComicCard = styled.View`
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  height: 500px;
+  height: 525px;
   margin-top: 20px;
 `;
 
@@ -25,7 +25,7 @@ export const LabelCard = styled.View`
 export const ComicLabel = styled.Text`
   align-self: center;
   color: #fff;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-right: 5px;
   margin-left: 5px;
   font-weight: bold;
@@ -37,15 +37,15 @@ export const ComicImage = styled.Image`
   border-top-left-radius: 10px;
 `;
 
-export const DetailsButton = styled.TouchableOpacity`
+export const DetailsButton = styled.TouchableHighlight`
   background-color: rgba(255, 255, 255, 0.75);
   height: 35px;
   border: 1px solid white;
   border-radius: 50px;
   margin: 10px;
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
-  
 `;
 
 export const TextButton = styled.Text`

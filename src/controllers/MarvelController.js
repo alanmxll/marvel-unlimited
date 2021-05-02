@@ -5,11 +5,15 @@ export default class MarvelController {
     return await MarvelRepository.fetchCharacters();
   }
 
+  async fetchMoreCharacters({ offset }) {
+    return await MarvelRepository.fetchMoreCharacters({ offset });
+  }
+
   async fetchComics() {
     return await MarvelRepository.fetchComics();
   }
 
-  async fetchComicsByCharacterId({id}) {
-    return await MarvelRepository.fetchComicsByCharacterId({id})
+  async fetchComicsByCharacterId({ id }) {
+    return await MarvelRepository.fetchComicsByCharacterId({ id });
   }
 }

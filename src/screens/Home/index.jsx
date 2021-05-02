@@ -18,10 +18,20 @@ export default function Home({ navigation }) {
     if (heroes.length === 0) fetchCharacters();
   }, [heroes]);
 
+  async function onReached() {
+    const data = await marvelController.fetchMoreCharacters({
+      offset: heroes.length,
+    });
+
+    const newHeroes = await data.results;
+
+    setHeroes((oldHeroes) => [...oldHeroes, ...newHeroes]);
+  }
+
   return (
     <Container>
       {heroes.length > 0 ? (
-        <List data={heroes} navigation={navigation} />
+        <List data={heroes} navigation={navigation} onReached={onReached} />
       ) : (
         <LoadData />
       )}

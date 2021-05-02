@@ -1,25 +1,55 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View`
-  border-radius: 5px;
-  margin-top: 10px;
-  height: 450px;
+export const Container = styled.ScrollView`
+  background-color: #333;
+`;
+
+export const ComicCard = styled.View`
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  height: 525px;
+  margin-top: 20px;
+`;
+
+export const LabelCard = styled.View`
+  flex: 1;
+  margin-top: 400px;
+  height: 150px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
 `;
 
 export const ComicLabel = styled.Text`
   align-self: center;
   color: #fff;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-right: 5px;
   margin-left: 5px;
-  font-size: 16px;
   font-weight: bold;
 `;
 
 export const ComicImage = styled.Image`
   flex: 1;
-  width: null;
-  height: null;
-  resize-mode: contain;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+`;
+
+export const DetailsButton = styled.TouchableHighlight`
+  background-color: rgba(255, 255, 255, 0.75);
+  height: 35px;
+  border: 1px solid white;
+  border-radius: 50px;
   margin: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextButton = styled.Text`
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
 `;
